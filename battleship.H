@@ -353,7 +353,7 @@ Grid make_computer_grid(std::vector<std::string> names, std::vector<int> lengths
 
 ///
 /// Generates an attack by the computer. The computer doesn't play smart (i.e. guessing adjacent squares once it hits). 
-/// Instead, it attacks randomly 50% of the time and is guaranteed to hit 50% of the time. This is designed to simulate 
+/// Instead, it attacks randomly 75% of the time and is guaranteed to hit 25% of the time. This is designed to simulate 
 /// playing with an opponent. Takes the player's Grid object and calls attack(). 
 ///
 void attack_of_the_computer(Grid& player_grid) { 
@@ -362,7 +362,7 @@ void attack_of_the_computer(Grid& player_grid) {
     ///
     /// Determine whether the computer is attacking randomly or guaranteed to hit
     ///
-    if (attack_dist(gen) <= 0.5) { //Guess randomly
+    if (attack_dist(gen) <= 0.75) { //Guess randomly
         std::uniform_int_distribution<int> coord_dist(0, GRID_SIZE*GRID_SIZE-1);
         int g;
         do {

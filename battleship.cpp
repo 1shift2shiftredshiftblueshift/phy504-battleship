@@ -8,7 +8,6 @@ int main() {
     ///
     /// Setup phase: read in the user ships
     ///
-    std::cout << "Battleship game introduction & rules etc etc" << std::endl;
     std::vector<std::string> ship_names{"Carrier","Destroyer","Submarine","Patrol"};
     std::vector<int> ship_lengths{5,4,3,2};
     Grid player_grid = Grid();
@@ -53,7 +52,9 @@ int main() {
         attack_of_the_computer(player_grid);
         
         if (player_grid.get_ship_coords().size() == 0) {
-            std::cout << "Computer wins :(";
+            std::cout << "Computer wins :(" << std::endl;
+            std::cout << "The computer grid was: " <<std::endl;
+            std::cout << computer_grid;
             game_end = true;
         }
     }

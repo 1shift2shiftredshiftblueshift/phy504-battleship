@@ -3,7 +3,7 @@ name: battleship-unit-tests
 on: [push, pull_request]
 
 jobs:
-  array-tests:
+  battleship-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
 
       - name: Compile
         run: |
-          g++ -o test_battleship test_battleshi[].cpp 
+          g++ -o test_battleship test_battleship.cpp 
 
       - name: Test
         run: |

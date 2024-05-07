@@ -1,0 +1,24 @@
+name: battleship-unit-tests
+
+on: [push, pull_request]
+
+jobs:
+  array-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -y -qq
+          sudo apt-get -qq -y install g++
+
+      - name: Compile
+        run: |
+          g++ -o test_battleship test_battleshi[].cpp 
+
+      - name: Test
+        run: |
+          ./test_battleship 

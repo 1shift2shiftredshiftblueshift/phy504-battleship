@@ -133,7 +133,7 @@ class Grid {
         /// Adds a ship to the grid. Takes a Ship object to add, and removes the coordinates it inhabits from 
         /// open_coords and adds then to ship_coords. Also adds the Ship object to ships.
         ///
-        void add_ship(Ship& ship) {
+        void add_ship(Ship ship) {
             for (auto c : ship.get_safe_coords()) {
                 ship_coords.push_back(c); 
                 open_coords.erase(std::remove(open_coords.begin(), open_coords.end(), c), open_coords.end());
